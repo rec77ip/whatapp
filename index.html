@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WhatsApp Clone v2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- #app = the phone window. data-theme="dark" or "light" switches every colour (see style.css variables).
+     Inside: #list-view (chats), #chat-view (one chat), #info (contact page), #tools (floating buttons). -->
+<div id="app" data-theme="dark">
+
+  <!-- SCREEN 1: chat list -->
+  <div id="list-view">
+    <header class="bar"><h1>WhatsApp</h1><button><img class="ico" src="image/camera.png" alt=""></button><button>&#8942;</button></header>
+    <div class="search"><img class="ico" src="image/search.png" alt=""><input id="search" placeholder="Ask Meta AI or Search"></div>
+    <!-- each .item = one contact. data-* attributes store its name, number and about text -->
+    <div id="chat-list">
+<div class="item" data-id="c1" data-name="Mum" data-num="+254 725 254 504" data-about="Hey there! I am using WhatsApp.">
+  <div class="av" data-av="c1" style="--h:47"><span>M</span></div>
+  <div class="info"><div class="top"><b>Mum</b><small>11:06 AM</small></div><div class="row"><p class="last">Okay my dear. Call me when you get home</p></div></div>
+</div>
+<div class="item unread" data-id="c2" data-name="Dad" data-num="+254 728 696 159" data-about="At work">
+  <div class="av" data-av="c2" style="--h:94"><span>D</span></div>
+  <div class="info"><div class="top"><b>Dad</b><small>7:05 AM</small></div><div class="row"><p class="last">Good. Be careful on the road</p><span class="badge">6</span></div></div>
+</div>
+<div class="item" data-id="c3" data-name="Wanjiku" data-num="+254 733 528 171" data-about="Busy">
+  <div class="av" data-av="c3" style="--h:141"><span>W</span></div>
+  <div class="info"><div class="top"><b>Wanjiku</b><small>11:27 AM</small></div><div class="row"><p class="last">Wueh I can&#x27;t wait, let&#x27;s meet at Westgate at 2</p></div></div>
+</div>
+<div class="item unread" data-id="c4" data-name="Achieng" data-num="+254 711 946 679" data-about="Available">
+  <div class="av" data-av="c4" style="--h:188"><span>A</span></div>
+  <div class="info"><div class="top"><b>Achieng</b><small>11:03 AM</small></div><div class="row"><p class="last">Lakini mimi nimechoka, we will talk tonight</p><span class="badge">12</span></div></div>
+</div>
+<div class="item" data-id="c5" data-name="Njeri" data-num="+254 730 150 326" data-about="Living my best life">
+  <div class="av" data-av="c5" style="--h:235"><span>N</span></div>
+  <div class="info"><div class="top"><b>Njeri</b><small>8:18 AM</small></div><div class="row"><p class="last">Thank you babe, you are the best 💕</p></div></div>
+</div>
+<div class="item" data-id="c6" data-name="Brenda" data-num="+254 733 247 653" data-about="Available">
+  <div class="av" data-av="c6" style="--h:282"><span>B</span></div>
+  <div class="info"><div class="top"><b>Brenda</b><small>9:35 AM</small></div><div class="row"><p class="last">Okay text me when you get in</p></div></div>
+</div>
+<div class="item" data-id="c7" data-name="Mercy" data-num="+254 715 205 695" data-about="Blessed">
+  <div class="av" data-av="c7" style="--h:329"><span>M</span></div>
+  <div class="info"><div class="top"><b>Mercy</b><small>8:23 AM</small></div><div class="row"><p class="last">Amazing, see you then 🙏</p></div></div>
+</div>
+<div class="item unread" data-id="c8" data-name="Cousin Faith" data-num="+254 713 660 829" data-about="Available">
+  <div class="av" data-av="c8" style="--h:16"><span>CF</span></div>
+  <div class="info"><div class="top"><b>Cousin Faith</b><small>7:39 AM</small></div><div class="row"><p class="last">Please try, everyone will be there</p><span class="badge">3</span></div></div>
+</div>
+<div class="item" data-id="c9" data-name="Naomi" data-num="+254 716 608 796" data-about="Hustling">
+  <div class="av" data-av="c9" style="--h:63"><span>N</span></div>
+  <div class="info"><div class="top"><b>Naomi</b><small>9:29 AM</small></div><div class="row"><p class="last">Wait, let me call you now</p></div></div>
+</div>
+<div class="item" data-id="c10" data-name="Aunty Grace" data-num="+254 740 470 406" data-about="Available">
+  <div class="av" data-av="c10" style="--h:110"><span>AG</span></div>
+  <div class="info"><div class="top"><b>Aunty Grace</b><small>8:44 AM</small></div><div class="row"><p class="last">God is faithful. Come visit us this weekend</p></div></div>
+</div>
+<div class="item" data-id="c11" data-name="Shosh" data-num="+254 720 183 688" data-about="Available">
+  <div class="av" data-av="c11" style="--h:157"><span>S</span></div>
+  <div class="info"><div class="top"><b>Shosh</b><small>10:56 AM</small></div><div class="row"><p class="last">It is better, the doctor said I should rest</p></div></div>
+</div>
+<div class="item unread" data-id="c12" data-name="Lilian Work" data-num="+254 725 846 559" data-about="At work">
+  <div class="av" data-av="c12" style="--h:204"><span>LW</span></div>
+  <div class="info"><div class="top"><b>Lilian Work</b><small>7:07 AM</small></div><div class="row"><p class="last">Please carry the report</p><span class="badge">4</span></div></div>
+</div>
+<div class="item" data-id="c13" data-name="Kate Salon" data-num="+254 745 528 268" data-about="Available">
+  <div class="av" data-av="c13" style="--h:251"><span>KS</span></div>
+  <div class="info"><div class="top"><b>Kate Salon</b><small>10:26 AM</small></div><div class="row"><p class="last">Done. Come with your hair washed 😊</p></div></div>
+</div>
+<div class="item" data-id="c14" data-name="Mama Mboga" data-num="+254 711 784 179" data-about="Available">
+  <div class="av" data-av="c14" style="--h:298"><span>MM</span></div>
+  <div class="info"><div class="top"><b>Mama Mboga</b><small>9:21 AM</small></div><div class="row"><p class="last">Sawa dear, nitakuwekea</p></div></div>
+</div>
+<div class="item" data-id="c15" data-name="Kevin" data-num="+254 728 708 608" data-about="Mtaani">
+  <div class="av" data-av="c15" style="--h:345"><span>K</span></div>
+  <div class="info"><div class="top"><b>Kevin</b><small>10:04 AM</small></div><div class="row"><p class="last">I was thinking we could grab lunch</p></div></div>
+</div>
+<div class="item unread" data-id="c16" data-name="Brian" data-num="+254 712 376 585" data-about="Busy">
+  <div class="av" data-av="c16" style="--h:32"><span>B</span></div>
+  <div class="info"><div class="top"><b>Brian</b><small>9:41 AM</small></div><div class="row"><p class="last">Nice to meet you too. How was your day?</p><span class="badge">2</span></div></div>
+</div>
+<div class="item" data-id="c17" data-name="Ian" data-num="+254 740 391 833" data-about="Available">
+  <div class="av" data-av="c17" style="--h:79"><span>I</span></div>
+  <div class="info"><div class="top"><b>Ian</b><small>9:01 AM</small></div><div class="row"><p class="last">Next one is on me, I insist 😄</p></div></div>
+</div>
+<div class="item" data-id="c18" data-name="Mama Gift" data-num="+254 740 463 272" data-about="Available">
+  <div class="av" data-av="c18" style="--h:126"><span>MG</span></div>
+  <div class="info"><div class="top"><b>Mama Gift</b><small>10:03 AM</small></div><div class="row"><p class="last">Karibu sana. Tuma picha ya Gift</p></div></div>
+</div>
+<div class="item" data-id="c19" data-name="Cheptoo" data-num="+254 716 886 394" data-about="Available">
+  <div class="av" data-av="c19" style="--h:173"><span>C</span></div>
+  <div class="info"><div class="top"><b>Cheptoo</b><small>8:25 AM</small></div><div class="row"><p class="last">Okay, 6am sharp, don&#x27;t sleep 😂</p></div></div>
+</div>
+<div class="item unread" data-id="c20" data-name="Mwende" data-num="+254 730 992 608" data-about="Available">
+  <div class="av" data-av="c20" style="--h:220"><span>M</span></div>
+  <div class="info"><div class="top"><b>Mwende</b><small>10:25 AM</small></div><div class="row"><p class="last">Send me the link please 🙏</p><span class="badge">9</span></div></div>
+</div>
+<div class="item" data-id="c21" data-name="Auma" data-num="+254 722 240 938" data-about="Available">
+  <div class="av" data-av="c21" style="--h:267"><span>A</span></div>
+  <div class="info"><div class="top"><b>Auma</b><small>11:17 AM</small></div><div class="row"><p class="last">No promise 😂 come early</p></div></div>
+</div>
+<div class="item" data-id="c22" data-name="Zawadi" data-num="+254 733 467 799" data-about="Available">
+  <div class="av" data-av="c22" style="--h:314"><span>Z</span></div>
+  <div class="info"><div class="top"><b>Zawadi</b><small>8:05 AM</small></div><div class="row"><p class="last">Of course! Dinner is on me</p></div></div>
+</div>
+<div class="item unread" data-id="c23" data-name="Lucy" data-num="+254 715 254 337" data-about="Available">
+  <div class="av" data-av="c23" style="--h:1"><span>L</span></div>
+  <div class="info"><div class="top"><b>Lucy</b><small>10:53 AM</small></div><div class="row"><p class="last">Got them, you are a lifesaver!</p><span class="badge">7</span></div></div>
+</div>
+<div class="item" data-id="c24" data-name="Dorcas" data-num="+254 715 369 388" data-about="Available">
+  <div class="av" data-av="c24" style="--h:48"><span>D</span></div>
+  <div class="info"><div class="top"><b>Dorcas</b><small>10:34 AM</small></div><div class="row"><p class="last">Pink or white, anything cute</p></div></div>
+</div>
+<div class="item" data-id="c25" data-name="Beatrice" data-num="+254 728 724 679" data-about="Available">
+  <div class="av" data-av="c25" style="--h:95"><span>B</span></div>
+  <div class="info"><div class="top"><b>Beatrice</b><small>11:39 AM</small></div><div class="row"><p class="last">Sawa, I will be there</p></div></div>
+</div>
+<div class="item" data-id="c26" data-name="Joy" data-num="+254 711 567 991" data-about="Available">
+  <div class="av" data-av="c26" style="--h:142"><span>J</span></div>
+  <div class="info"><div class="top"><b>Joy</b><small>10:25 AM</small></div><div class="row"><p class="last">Sorry, I missed it. Call again</p></div></div>
+</div>
+<div class="item" data-id="c27" data-name="Esther" data-num="+254 730 206 593" data-about="Available">
+  <div class="av" data-av="c27" style="--h:189"><span>E</span></div>
+  <div class="info"><div class="top"><b>Esther</b><small>7:12 AM</small></div><div class="row"><p class="last">Thank you, I will pay you back</p></div></div>
+</div>
+<div class="item" data-id="c28" data-name="Nyambura" data-num="+254 712 313 551" data-about="Available">
+  <div class="av" data-av="c28" style="--h:236"><span>N</span></div>
+  <div class="info"><div class="top"><b>Nyambura</b><small>9:38 AM</small></div><div class="row"><p class="last">Perfect, I will bring lunch 😊</p></div></div>
+</div>
+<div class="item" data-id="c29" data-name="Akinyi" data-num="+254 711 204 100" data-about="Available">
+  <div class="av" data-av="c29" style="--h:283"><span>A</span></div>
+  <div class="info"><div class="top"><b>Akinyi</b><small>11:06 AM</small></div><div class="row"><p class="last">Still on Thika Road, send help 😭</p></div></div>
+</div>
+<div class="item" data-id="c30" data-name="Landlord" data-num="+254 728 728 126" data-about="Available">
+  <div class="av" data-av="c30" style="--h:330"><span>L</span></div>
+  <div class="info"><div class="top"><b>Landlord</b><small>8:39 AM</small></div><div class="row"><p class="last">Okay, send the M-Pesa message</p></div></div>
+</div>
+<div class="item unread" data-id="c31" data-name="Sharon" data-num="+254 730 252 749" data-about="Available">
+  <div class="av" data-av="c31" style="--h:17"><span>S</span></div>
+  <div class="info"><div class="top"><b>Sharon</b><small>11:23 AM</small></div><div class="row"><p class="last">Okay you&#x27;re right, thank you boss 😂</p><span class="badge">5</span></div></div>
+</div>
+<div class="item" data-id="c32" data-name="Purity" data-num="+254 742 225 218" data-about="Available">
+  <div class="av" data-av="c32" style="--h:64"><span>P</span></div>
+  <div class="info"><div class="top"><b>Purity</b><small>10:30 AM</small></div><div class="row"><p class="last">Okay, I have received it, thanks</p></div></div>
+</div>
+<div class="item" data-id="c33" data-name="Mildred" data-num="+254 723 187 247" data-about="Available">
+  <div class="av" data-av="c33" style="--h:111"><span>M</span></div>
+  <div class="info"><div class="top"><b>Mildred</b><small>9:47 AM</small></div><div class="row"><p class="last">Awww I am so happy for you 😍</p></div></div>
+</div>
+<div class="item" data-id="c34" data-name="Diana" data-num="+254 722 590 948" data-about="Available">
+  <div class="av" data-av="c34" style="--h:158"><span>D</span></div>
+  <div class="info"><div class="top"><b>Diana</b><small>7:13 AM</small></div><div class="row"><p class="last">Okay hurry up, it is cold 😅</p></div></div>
+</div>
+<div class="item" data-id="c35" data-name="Winnie" data-num="+254 745 470 250" data-about="Available">
+  <div class="av" data-av="c35" style="--h:205"><span>W</span></div>
+  <div class="info"><div class="top"><b>Winnie</b><small>7:48 AM</small></div><div class="row"><p class="last">Yes thanks. Have a lovely day ❤</p></div></div>
+</div>
+<div class="item" data-id="c36" data-name="Janet" data-num="+254 745 405 758" data-about="Available">
+  <div class="av" data-av="c36" style="--h:252"><span>J</span></div>
+  <div class="info"><div class="top"><b>Janet</b><small>9:33 AM</small></div><div class="row"><p class="last">Thanks Jan, you are the best</p></div></div>
+</div>
+<div class="item" data-id="c37" data-name="Rose" data-num="+254 728 271 464" data-about="Available">
+  <div class="av" data-av="c37" style="--h:299"><span>R</span></div>
+  <div class="info"><div class="top"><b>Rose</b><small>11:49 AM</small></div><div class="row"><p class="last">Okay, I will tell her</p></div></div>
+</div>
+<div class="item" data-id="c38" data-name="Linet" data-num="+254 745 437 751" data-about="Available">
+  <div class="av" data-av="c38" style="--h:346"><span>L</span></div>
+  <div class="info"><div class="top"><b>Linet</b><small>8:51 AM</small></div><div class="row"><p class="last">At least it is over, let&#x27;s go eat</p></div></div>
+</div>
+<div class="item unread" data-id="c39" data-name="Caro" data-num="+254 720 937 510" data-about="Available">
+  <div class="av" data-av="c39" style="--h:33"><span>C</span></div>
+  <div class="info"><div class="top"><b>Caro</b><small>11:31 AM</small></div><div class="row"><p class="last">Send me the shade please</p><span class="badge">3</span></div></div>
+</div>
+<div class="item" data-id="c40" data-name="Neema" data-num="+254 728 848 129" data-about="Available">
+  <div class="av" data-av="c40" style="--h:80"><span>N</span></div>
+  <div class="info"><div class="top"><b>Neema</b><small>9:30 AM</small></div><div class="row"><p class="last">Perfect, I will confirm the time</p></div></div>
+</div>
+<div class="item" data-id="c41" data-name="Mueni" data-num="+254 722 298 809" data-about="Available">
+  <div class="av" data-av="c41" style="--h:127"><span>M</span></div>
+  <div class="info"><div class="top"><b>Mueni</b><small>10:51 AM</small></div><div class="row"><p class="last">You deserve it, let&#x27;s celebrate soon</p></div></div>
+</div>
+<div class="item" data-id="c42" data-name="Kemunto" data-num="+254 728 473 182" data-about="Available">
+  <div class="av" data-av="c42" style="--h:174"><span>K</span></div>
+  <div class="info"><div class="top"><b>Kemunto</b><small>8:30 AM</small></div><div class="row"><p class="last">Boring 😂 enjoy your sleep</p></div></div>
+</div>
+<div class="item" data-id="c43" data-name="Wambui" data-num="+254 716 445 309" data-about="Available">
+  <div class="av" data-av="c43" style="--h:221"><span>W</span></div>
+  <div class="info"><div class="top"><b>Wambui</b><small>11:53 AM</small></div><div class="row"><p class="last">Please don&#x27;t post the one with the funny face 😂</p></div></div>
+</div>
+<div class="item" data-id="c44" data-name="Boda Sam" data-num="+254 710 590 768" data-about="Available">
+  <div class="av" data-av="c44" style="--h:268"><span>BS</span></div>
+  <div class="info"><div class="top"><b>Boda Sam</b><small>7:53 AM</small></div><div class="row"><p class="last">Sawa, nakusubiri</p></div></div>
+</div>
+<div class="item" data-id="c45" data-name="Eunice" data-num="+254 713 497 901" data-about="Available">
+  <div class="av" data-av="c45" style="--h:315"><span>E</span></div>
+  <div class="info"><div class="top"><b>Eunice</b><small>8:27 AM</small></div><div class="row"><p class="last">Let&#x27;s talk tonight after work</p></div></div>
+</div>
+<div class="item" data-id="c46" data-name="Tabitha" data-num="+254 725 188 920" data-about="Available">
+  <div class="av" data-av="c46" style="--h:2"><span>T</span></div>
+  <div class="info"><div class="top"><b>Tabitha</b><small>10:47 AM</small></div><div class="row"><p class="last">Thank you, I will update you</p></div></div>
+</div>
+<div class="item" data-id="c47" data-name="Debra" data-num="+254 712 842 262" data-about="Available">
+  <div class="av" data-av="c47" style="--h:49"><span>D</span></div>
+  <div class="info"><div class="top"><b>Debra</b><small>7:09 AM</small></div><div class="row"><p class="last">Yay, I will bring dessert 🍰</p></div></div>
+</div>
+<div class="item" data-id="c48" data-name="Cynthia" data-num="+254 740 925 771" data-about="Available">
+  <div class="av" data-av="c48" style="--h:96"><span>C</span></div>
+  <div class="info"><div class="top"><b>Cynthia</b><small>11:30 AM</small></div><div class="row"><p class="last">I mean it, you looked gorgeous</p></div></div>
+</div>
+<div class="item" data-id="c49" data-name="Kui" data-num="+254 728 259 661" data-about="Available">
+  <div class="av" data-av="c49" style="--h:143"><span>K</span></div>
+  <div class="info"><div class="top"><b>Kui</b><small>7:00 AM</small></div><div class="row"><p class="last">Thanks dear, 10 minutes only</p></div></div>
+</div>
+<div class="item" data-id="c50" data-name="Naserian" data-num="+254 713 639 867" data-about="Available">
+  <div class="av" data-av="c50" style="--h:190"><span>N</span></div>
+  <div class="info"><div class="top"><b>Naserian</b><small>8:52 AM</small></div><div class="row"><p class="last">Okay, enjoy your trip 🙏</p></div></div>
+</div>
+    </div>
+    <button id="fab">&#10010;</button>
+    <nav id="tabs">
+      <div class="tab on"><span class="pill">&#128172;<em>198</em></span>Chats</div>
+      <div class="tab"><span>&#9678;</span>Updates</div>
+      <div class="tab"><span>&#128101;</span>Communities</div>
+      <div class="tab"><span><img class="ico" src="image/call.png" alt=""></span>Calls</div>
+    </nav>
+  </div>
+
+  <!-- SCREEN 2: open chat -->
+  <div id="chat-view">
+    <header class="bar">
+      <button id="back">&#8592;</button>
+      <div class="av" id="h-av"><span></span></div>
+      <div id="h-name"><b></b><small></small></div>
+      <button><img class="ico" src="image/camera.png" alt=""></button><button><img class="ico" src="image/call.png" alt=""></button><button>&#8942;</button>
+    </header>
+    <!-- one .pane per contact (messages). Only the .active pane is visible. -->
+    <div id="panes">
+<section class="pane" id="pane-c1"><div class="day">Yesterday</div><div class="m in">Have you eaten? Don&#x27;t sleep hungry 🙏<i>6:03 PM</i></div><div class="m out">Yes mum, I have eaten 😂<i>6:05 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay my dear. Call me when you get home<i>11:06 AM</i></div></section>
+<section class="pane" id="pane-c2"><div class="day">Yesterday</div><div class="m in">Send me the rent receipt tomorrow morning<i>6:32 PM</i></div><div class="m out">Okay dad, I will send it by 10<i>6:36 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Good. Be careful on the road<i>7:05 AM</i></div></section>
+<section class="pane" id="pane-c3"><div class="day">Yesterday</div><div class="m in">Girl are we still on for Saturday??<i>6:15 PM</i></div><div class="m out">Yesss I&#x27;m so ready 😭<i>6:17 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Wueh I can&#x27;t wait, let&#x27;s meet at Westgate at 2<i>11:27 AM</i></div></section>
+<section class="pane" id="pane-c4"><div class="day">Yesterday</div><div class="m in">Did you see what she posted? 😂😂<i>6:07 PM</i></div><div class="m out">Eeh nimeona! She has no chill<i>6:11 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Eeh nimeona! She has no chill</div>Lakini mimi nimechoka, we will talk tonight<i>11:03 AM</i></div></section>
+<section class="pane" id="pane-c5"><div class="day">Yesterday</div><div class="m in">Please send me that dress link<i>6:02 PM</i></div><div class="m out">Wait let me find it<i>6:11 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Thank you babe, you are the best 💕<i>8:18 AM</i></div></section>
+<section class="pane" id="pane-c6"><div class="day">Yesterday</div><div class="m in">Are you home yet? It&#x27;s getting late<i>6:07 PM</i></div><div class="m out">Almost there, traffic is crazy<i>6:17 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay text me when you get in<i>9:35 AM</i></div></section>
+<section class="pane" id="pane-c7"><div class="day">Yesterday</div><div class="m in">Are you coming for fellowship on Sunday?<i>6:36 PM</i></div><div class="m out">Yes, I will be there by 9<i>6:47 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Amazing, see you then 🙏<i>8:23 AM</i></div></section>
+<section class="pane" id="pane-c8"><div class="day">Yesterday</div><div class="m in">Shosh is asking if you are coming for the wedding<i>6:04 PM</i></div><div class="m out">Yes I am, just waiting for my leave to be approved<i>6:14 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Yes I am, just waiting for my leave to be approved</div>Please try, everyone will be there<i>7:39 AM</i></div></section>
+<section class="pane" id="pane-c9"><div class="day">Yesterday</div><div class="m in">Girl I need to tell you something 😩<i>6:34 PM</i></div><div class="m out">Okay spill, what happened?<i>6:41 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Wait, let me call you now<i>9:29 AM</i></div></section>
+<section class="pane" id="pane-c10"><div class="day">Yesterday</div><div class="m in">How is work, my dear?<i>6:15 PM</i></div><div class="m out">It is fine aunty, just busy<i>6:28 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">God is faithful. Come visit us this weekend<i>8:44 AM</i></div></section>
+<section class="pane" id="pane-c11"><div class="day">Yesterday</div><div class="m in">Hello my girl, how are you?<i>6:19 PM</i></div><div class="m out">I am good shosh, how is your leg?<i>6:28 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">It is better, the doctor said I should rest<i>10:56 AM</i></div></section>
+<section class="pane" id="pane-c12"><div class="day">Yesterday</div><div class="m in">Reminder: meeting is at 9 tomorrow<i>6:18 PM</i></div><div class="m out">Noted, I will be there<i>6:28 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Noted, I will be there</div>Please carry the report<i>7:07 AM</i></div></section>
+<section class="pane" id="pane-c13"><div class="day">Yesterday</div><div class="m in">We have a slot tomorrow at 2 for braids<i>6:21 PM</i></div><div class="m out">Perfect, book me in please<i>6:24 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Done. Come with your hair washed 😊<i>10:26 AM</i></div></section>
+<section class="pane" id="pane-c14"><div class="day">Yesterday</div><div class="m in">Nina sukuma na tomatoes fresh leo<i>6:35 PM</i></div><div class="m out">Weka kilo mbili za sukuma<i>6:45 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Sawa dear, nitakuwekea<i>9:21 AM</i></div></section>
+<section class="pane" id="pane-c15"><div class="day">Yesterday</div><div class="m in">Hey, are you free this weekend?<i>6:37 PM</i></div><div class="m out">Maybe, why?<i>6:50 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">I was thinking we could grab lunch<i>10:04 AM</i></div></section>
+<section class="pane" id="pane-c16"><div class="day">Yesterday</div><div class="m in">Hi, I got your number from Wanjiku<i>6:04 PM</i></div><div class="m out">Oh hey, nice to meet you<i>6:05 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Oh hey, nice to meet you</div>Nice to meet you too. How was your day?<i>9:41 AM</i></div></section>
+<section class="pane" id="pane-c17"><div class="day">Yesterday</div><div class="m in">Thanks for the lift yesterday<i>6:24 PM</i></div><div class="m out">No worries, anytime<i>6:39 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Next one is on me, I insist 😄<i>9:01 AM</i></div></section>
+<section class="pane" id="pane-c18"><div class="day">Yesterday</div><div class="m in">Did you get the money I sent?<i>6:39 PM</i></div><div class="m out">Yes mama, thank you so much<i>6:41 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Karibu sana. Tuma picha ya Gift<i>10:03 AM</i></div></section>
+<section class="pane" id="pane-c19"><div class="day">Yesterday</div><div class="m in">Kesho tunaenda gym?<i>6:08 PM</i></div><div class="m out">Aki leo nimechoka, kesho sawa<i>6:20 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay, 6am sharp, don&#x27;t sleep 😂<i>8:25 AM</i></div></section>
+<section class="pane" id="pane-c20"><div class="day">Yesterday</div><div class="m in">Girl where did you buy those shoes?<i>6:05 PM</i></div><div class="m out">Kilimall, they were on offer<i>6:08 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Kilimall, they were on offer</div>Send me the link please 🙏<i>10:25 AM</i></div></section>
+<section class="pane" id="pane-c21"><div class="day">Yesterday</div><div class="m in">I&#x27;m free tonight, let&#x27;s watch a movie<i>6:27 PM</i></div><div class="m out">Which one? Not another horror 😂<i>6:41 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">No promise 😂 come early<i>11:17 AM</i></div></section>
+<section class="pane" id="pane-c22"><div class="day">Yesterday</div><div class="m in">Happy birthday in advance babe 🎂<i>6:24 PM</i></div><div class="m out">Awww thank you, you remembered!<i>6:28 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Of course! Dinner is on me<i>8:05 AM</i></div></section>
+<section class="pane" id="pane-c23"><div class="day">Yesterday</div><div class="m in">Please send me the notes from Monday<i>6:14 PM</i></div><div class="m out">Sending now, check your email<i>6:15 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Got them, you are a lifesaver!<i>10:53 AM</i></div></section>
+<section class="pane" id="pane-c24"><div class="day">Yesterday</div><div class="m in">Are you coming for the bridal shower?<i>6:00 PM</i></div><div class="m out">Yes, what is the dress code?<i>6:03 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Yes, what is the dress code?</div>Pink or white, anything cute<i>10:34 AM</i></div></section>
+<section class="pane" id="pane-c25"><div class="day">Yesterday</div><div class="m in">Hi dear, what time are we meeting?<i>6:20 PM</i></div><div class="m out">Around 4pm at the usual place<i>6:23 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Sawa, I will be there<i>11:39 AM</i></div></section>
+<section class="pane" id="pane-c26"><div class="day">Yesterday</div><div class="m in">My phone is almost dead, call me on this number<i>6:35 PM</i></div><div class="m out">Okay, calling now<i>6:42 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Sorry, I missed it. Call again<i>10:25 AM</i></div></section>
+<section class="pane" id="pane-c27"><div class="day">Yesterday</div><div class="m in">Did you pass by the pharmacy?<i>6:40 PM</i></div><div class="m out">Yes, I bought the medicine<i>6:47 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Thank you, I will pay you back<i>7:12 AM</i></div></section>
+<section class="pane" id="pane-c28"><div class="day">Yesterday</div><div class="m in">Can you braid my hair on Saturday?<i>6:10 PM</i></div><div class="m out">Sure, come at 9am<i>6:12 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Sure, come at 9am</div>Perfect, I will bring lunch 😊<i>9:38 AM</i></div></section>
+<section class="pane" id="pane-c29"><div class="day">Yesterday</div><div class="m in">Wueh this traffic will finish me 😩<i>6:36 PM</i></div><div class="m out">Where are you now?<i>6:39 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Still on Thika Road, send help 😭<i>11:06 AM</i></div></section>
+<section class="pane" id="pane-c30"><div class="day">Yesterday</div><div class="m in">Rent is due on the 5th<i>6:04 PM</i></div><div class="m out">Noted, I will pay on Friday<i>6:18 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay, send the M-Pesa message<i>8:39 AM</i></div></section>
+<section class="pane" id="pane-c31"><div class="day">Yesterday</div><div class="m in">Girl I have no outfit for tomorrow 😭<i>6:16 PM</i></div><div class="m out">Wear the green dress, it looks nice on you<i>6:22 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay you&#x27;re right, thank you boss 😂<i>11:23 AM</i></div></section>
+<section class="pane" id="pane-c32"><div class="day">Yesterday</div><div class="m in">Did you pay the M-Pesa for the trip?<i>6:31 PM</i></div><div class="m out">Yes, I sent it this morning<i>6:39 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Yes, I sent it this morning</div>Okay, I have received it, thanks<i>10:30 AM</i></div></section>
+<section class="pane" id="pane-c33"><div class="day">Yesterday</div><div class="m in">How is baby doing?<i>6:06 PM</i></div><div class="m out">She is fine, she started walking!<i>6:18 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Awww I am so happy for you 😍<i>9:47 AM</i></div></section>
+<section class="pane" id="pane-c34"><div class="day">Yesterday</div><div class="m in">I am outside, come down<i>6:10 PM</i></div><div class="m out">Two minutes, I am wearing shoes<i>6:19 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay hurry up, it is cold 😅<i>7:13 AM</i></div></section>
+<section class="pane" id="pane-c35"><div class="day">Yesterday</div><div class="m in">Good morning, did you sleep well?<i>6:34 PM</i></div><div class="m out">Yes, you?<i>6:49 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Yes thanks. Have a lovely day ❤<i>7:48 AM</i></div></section>
+<section class="pane" id="pane-c36"><div class="day">Yesterday</div><div class="m in">Please remind me to carry the keys<i>6:05 PM</i></div><div class="m out">Sure, I will text you at 7<i>6:17 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Sure, I will text you at 7</div>Thanks Jan, you are the best<i>9:33 AM</i></div></section>
+<section class="pane" id="pane-c37"><div class="day">Yesterday</div><div class="m in">Mama asked if you are coming home this weekend<i>6:14 PM</i></div><div class="m out">I will try, it depends on work<i>6:23 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay, I will tell her<i>11:49 AM</i></div></section>
+<section class="pane" id="pane-c38"><div class="day">Yesterday</div><div class="m in">The exam was so hard 😭<i>6:14 PM</i></div><div class="m out">I know! I almost cried<i>6:24 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">At least it is over, let&#x27;s go eat<i>8:51 AM</i></div></section>
+<section class="pane" id="pane-c39"><div class="day">Yesterday</div><div class="m in">Where did you get that lipstick?<i>6:14 PM</i></div><div class="m out">Nairobi CBD, Moi Avenue<i>6:18 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Send me the shade please<i>11:31 AM</i></div></section>
+<section class="pane" id="pane-c40"><div class="day">Yesterday</div><div class="m in">Can we meet on Friday instead?<i>6:01 PM</i></div><div class="m out">Friday works for me<i>6:14 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Friday works for me</div>Perfect, I will confirm the time<i>9:30 AM</i></div></section>
+<section class="pane" id="pane-c41"><div class="day">Yesterday</div><div class="m in">Congratulations on the new job!!<i>6:38 PM</i></div><div class="m out">Thank you so much 🥰<i>6:44 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">You deserve it, let&#x27;s celebrate soon<i>10:51 AM</i></div></section>
+<section class="pane" id="pane-c42"><div class="day">Yesterday</div><div class="m in">Are you watching the match tonight?<i>6:14 PM</i></div><div class="m out">No, I will sleep early<i>6:16 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Boring 😂 enjoy your sleep<i>8:30 AM</i></div></section>
+<section class="pane" id="pane-c43"><div class="day">Yesterday</div><div class="m in">I just sent you the photos<i>6:30 PM</i></div><div class="m out">Received, they are so nice!<i>6:40 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Please don&#x27;t post the one with the funny face 😂<i>11:53 AM</i></div></section>
+<section class="pane" id="pane-c44"><div class="day">Yesterday</div><div class="m in">Niko stage, uko wapi?<i>6:22 PM</i></div><div class="m out">Coming in 5 minutes<i>6:35 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Coming in 5 minutes</div>Sawa, nakusubiri<i>7:53 AM</i></div></section>
+<section class="pane" id="pane-c45"><div class="day">Yesterday</div><div class="m in">Sorry I forgot to reply 🙏<i>6:12 PM</i></div><div class="m out">It is okay, I was just checking in<i>6:20 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Let&#x27;s talk tonight after work<i>8:27 AM</i></div></section>
+<section class="pane" id="pane-c46"><div class="day">Yesterday</div><div class="m in">Please pray for me, I have an interview<i>6:25 PM</i></div><div class="m out">I will, all the best!<i>6:33 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Thank you, I will update you<i>10:47 AM</i></div></section>
+<section class="pane" id="pane-c47"><div class="day">Yesterday</div><div class="m in">Can I come over tonight?<i>6:10 PM</i></div><div class="m out">Sure, I will cook<i>6:13 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Yay, I will bring dessert 🍰<i>7:09 AM</i></div></section>
+<section class="pane" id="pane-c48"><div class="day">Yesterday</div><div class="m in">That outfit was too much 😍<i>6:09 PM</i></div><div class="m out">Stop it, you are making me blush 😂<i>6:19 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in"><div class="q"><b>You</b>Stop it, you are making me blush 😂</div>I mean it, you looked gorgeous<i>11:30 AM</i></div></section>
+<section class="pane" id="pane-c49"><div class="day">Yesterday</div><div class="m in">I will be late, sorry!<i>6:35 PM</i></div><div class="m out">No problem, I will wait<i>6:38 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Thanks dear, 10 minutes only<i>7:00 AM</i></div></section>
+<section class="pane" id="pane-c50"><div class="day">Yesterday</div><div class="m in">Safe travels my friend<i>6:08 PM</i></div><div class="m out">Thank you, I will text when I arrive<i>6:15 PM <u>&#10003;&#10003;</u></i></div><div class="day">Today</div><div class="m in">Okay, enjoy your trip 🙏<i>8:52 AM</i></div></section>
+    </div>
+    <footer id="composer">
+      <div class="field">
+        <span>&#128578;</span>
+        <input id="text" placeholder="Message" autocomplete="off">
+        <button id="clip">&#128206;</button>
+        <button id="cam"><img class="ico" src="image/camera.png" alt=""></button>
+      </div>
+      <button id="mic" class="go"><img class="ico" src="image/micro.png" alt=""></button>
+      <button id="send" class="go"><img class="ico" src="image/send.png" alt=""></button>
+    </footer>
+  </div>
+
+  <!-- SCREEN 3: contact info (tap the name in the chat header) -->
+  <div id="info" hidden>
+    <header class="bar"><button id="i-close">&#8592;</button><span style="flex:1"></span><button>&#8942;</button></header>
+    <div class="body">
+      <div class="av big" id="i-av"><span></span></div>
+      <!-- contenteditable = you can click and type to rename. Saved in script.js -->
+      <h2 id="i-name" contenteditable="true" spellcheck="false"></h2>
+      <p id="i-num" contenteditable="true" spellcheck="false"></p>
+      <div class="actions">
+        <div><b><img class="ico" src="image/call.png" alt=""></b>Audio</div><div><b>&#127909;</b>Video</div><div><b>&#128269;</b>Search</div>
+      </div>
+      <div class="media-head"><span>Media, links, and docs</span><span id="media-count">0 &#8250;</span></div>
+      <div id="media"></div>
+      <div class="row-i"><b>&#128450;</b><div>Manage storage<small>84.9 MB</small></div></div>
+      <div class="row-i"><b>&#128276;</b><div>Notifications</div></div>
+      <div class="row-i"><b>&#128444;</b><div>Media visibility</div></div>
+      <div class="row-i"><b>&#128274;</b><div>Encryption<small>Messages and calls are end-to-end encrypted. Tap to verify.</small></div></div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOOLS. #hide removes the whole group (itself too). Double-click any top bar to bring it back. -->
+  <div id="tools">
+    <button class="tool" id="theme" title="Light / dark">&#9728;</button>
+    <button class="tool list-only" id="shuffle" title="Shuffle contacts">&#128256;</button>
+    <button class="tool chat-only" id="wallbtn" title="Chat wallpaper">&#128444;</button>
+    <button class="tool chat-only" id="who" title="Who is sending?">Me</button>
+    <button class="tool chat-only" id="daybtn" title="Add a day / time divider">&#128197;</button>
+    <button class="tool chat-only" id="clear" title="Clear this chat">&#128465;</button>
+    <button class="tool" id="notebtn" title="Open note">&#128221;</button>
+    <button class="tool" id="hide" title="Hide these buttons">&#128065;</button>
+  </div>
+  <div id="daybox" hidden>
+    <div class="note-head"><b>Add day</b><button id="day-x" title="Close">&#10005;</button></div>
+    <div class="day-presets">
+      <button data-day="Yesterday">Yesterday</button>
+      <button data-day="Today">Today</button>
+      <button data-day="Tomorrow">Tomorrow</button>
+    </div>
+    <div class="day-custom">
+      <input id="day-input" placeholder="Or type: Monday, September 2, 2025">
+      <button id="day-add">Add</button>
+    </div>
+  </div>
+  <div id="note" hidden>
+    <div class="note-head"><b>Note</b><button id="note-x" title="Close note">&#10005;</button></div>
+    <textarea id="note-text" placeholder="Paste or type here..."></textarea>
+  </div>
+</div>
+
+<input type="file" id="pick-av" accept="image/*" hidden>
+<input type="file" id="pick-wall" accept="image/*" hidden>
+<input type="file" id="pick-img" accept="image/*" hidden>
+<script src="script.js"></script>
+</body>
+</html>
